@@ -1,7 +1,7 @@
-package com.staktrace.hello;
+package com.staktrace.javaddon;
 
 public class Bootstrap {
-    public void intall() {
+    public Bootstrap() {
         System.out.println("Hello, world!");
     }
 }

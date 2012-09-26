@@ -3,6 +3,7 @@ var Ci = Components.interfaces;
 var Cu = Components.utils;
 
 Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://gre/modules/AddonManager.jsm");
 
 function dump(a) {
     Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService).logStringMessage(a);
@@ -14,8 +15,9 @@ function windowId(win) {
 }
 
 function attachTo(aWindow) {
-    dump("Attempting to load the classes.dex file...");
-    aWindow.NativeWindow.loadDex();
+    AddonManager.getAddonByID("projects.javaddon.ffext@staktrace.com", function(addon) {
+        aWindow.NativeWindow.loadDex(addon.getResourceURI("java-code.jar").spec, "com.staktrace.javaddon.Bootstrap");
+    });
 }
 
 function detachFrom(aWindow) {

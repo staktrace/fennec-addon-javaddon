@@ -5,12 +5,13 @@
     <em:version>1.0</em:version>
     <em:type>2</em:type>
     <em:bootstrap>true</em:bootstrap>
+    <em:unpack>true</em:unpack>
 
     <!-- Target Application this extension can install into, with minimum and maximum supported versions. -->
     <em:targetApplication>
       <Description>
         <em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id>
-        <em:minVersion>18.0</em:minVersion>
+        <em:minVersion>18.0a1</em:minVersion>
         <em:maxVersion>18.*</em:maxVersion>
       </Description>
     </em:targetApplication>
